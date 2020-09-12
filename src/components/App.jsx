@@ -10,26 +10,14 @@ function App() {
   function handleChange(event) {
     const { name, value } = event.target;
     setContact((prevValue) => {
-      if (name === "fName")
-        return {
-          fName: value,
-          lName: prevValue.lName,
-          eMail: prevValue.eMail
-        };
-      else if (name === "lName")
-        return {
-          fName: prevValue.fName,
-          lName: value,
-          eMail: prevValue.eMail
-        };
-      else if (name === "eMail")
-        return {
-          fName: prevValue.fName,
-          lName: prevValue.lName,
-          eMail: value
-        };
+      return {
+        ...prevValue, //...is the spread operator.
+        //[] for accessing the name's value
+        [name]: value
+      };
     });
   }
+
   return (
     <div className="container">
       <h1>
