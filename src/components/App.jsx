@@ -14,19 +14,19 @@ function App() {
         return {
           fName: value,
           lName: prevValue.lName,
-          email: prevValue.eMail
+          eMail: prevValue.eMail
         };
       else if (name === "lName")
         return {
           fName: prevValue.fName,
           lName: value,
-          email: prevValue.eMail
+          eMail: prevValue.eMail
         };
       else if (name === "eMail")
         return {
           fName: prevValue.fName,
-          lName: prevValue.lMail,
-          email: value
+          lName: prevValue.lName,
+          eMail: value
         };
     });
   }
@@ -35,10 +35,10 @@ function App() {
       <h1>
         Hello
         <br />
-        {contact.fName} {contact.lName} {}
+        {contact.fName} {contact.lName}
         <br />
       </h1>
-      <p></p>
+      <p>{contact.eMail}</p>
 
       <input
         name="fName"
@@ -54,7 +54,7 @@ function App() {
       />
       <input
         name="eMail"
-        placeHolder="E Mai"
+        placeHolder="E Mail"
         value={contact.eMail}
         onChange={handleChange}
       />
