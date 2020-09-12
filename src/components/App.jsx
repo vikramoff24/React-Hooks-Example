@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
 function App() {
-  const [fullName, setFullName] = useState({
+  const [contact, setContact] = useState({
     fName: "",
-    lName: ""
+    lName: "",
+    eMail: ""
   });
 
   function handleChange(event) {
@@ -12,12 +13,20 @@ function App() {
       if (name === "fName")
         return {
           fName: value,
-          lName: prevValue.lName
+          lName: prevValue.lName,
+          email: prevValue.eMail
         };
       else if (name === "lName")
         return {
           fName: prevValue.fName,
-          lName: value
+          lName: value,
+          email: prevValue.eMail
+        };
+      else if (name === "eMail")
+        return {
+          fName: prevValue.fName,
+          lName: value,
+          email: prevValue.eMail
         };
     });
   }
@@ -26,20 +35,27 @@ function App() {
       <h1>
         Hello
         <br />
-        {fullName.fName} {fullName.lName}
+        {contact.fName} {contact.lName}
         <br />
       </h1>
+      <p></p>
 
       <input
         name="fName"
         placeHolder="First Name"
-        value={fullName.fName}
+        value={contact.fName}
         onChange={handleChange}
       />
       <input
         name="lName"
         placeHolder="Last Name"
-        mvalue={fullName.lName}
+        value={contact.lName}
+        onChange={handleChange}
+      />
+      <input
+        name="eMail"
+        placeHolder="E Mai"
+        value={contact.eMail}
         onChange={handleChange}
       />
       <button>Submit</button>
