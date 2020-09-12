@@ -25,8 +25,8 @@ function App() {
       else if (name === "eMail")
         return {
           fName: prevValue.fName,
-          lName: value,
-          email: prevValue.eMail
+          lName: prevValue.lMail,
+          email: value
         };
     });
   }
@@ -35,7 +35,7 @@ function App() {
       <h1>
         Hello
         <br />
-        {contact.fName} {contact.lName}
+        {contact.fName} {contact.lName} {}
         <br />
       </h1>
       <p></p>
