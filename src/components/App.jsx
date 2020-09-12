@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
 function App() {
+  const [fullName, setFullName] = useState({
+    fName: "",
+    lName: ""
+  });
   return (
     <div className="container">
       <h1>
