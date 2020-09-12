@@ -5,6 +5,22 @@ function App() {
     fName: "",
     lName: ""
   });
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setFullName((prevValue) => {
+      if (name === "fName")
+        return {
+          fName: value,
+          lName: prevValue.lName
+        };
+      else if (name === "lName")
+        return {
+          fName: prevValue.fName,
+          lName: value
+        };
+    });
+  }
   return (
     <div className="container">
       <h1>
