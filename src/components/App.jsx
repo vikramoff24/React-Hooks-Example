@@ -9,7 +9,7 @@ function App() {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    setFullName((prevValue) => {
+    setContact((prevValue) => {
       if (name === "fName")
         return {
           fName: value,
